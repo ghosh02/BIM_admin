@@ -6,17 +6,17 @@ import { MdWifiCalling3 } from "react-icons/md";
 import { MdOutlineSettings } from "react-icons/md";
 const sidebarData = [
   { navigate: "/overview", name: "Overview", icon: <MdDashboard size={30} /> },
-  { navigate: "/user", name: "Users", icon: <FiUsers size={30} /> },
+  { navigate: "/blog", name: "Blogs", icon: <FiUsers size={30} /> },
   {
     navigate: "/courseManagement",
     name: "Course ",
     icon: <MdWifiCalling3 size={30} />,
   },
-  {
-    navigate: "/settings",
-    name: "Settings",
-    icon: <MdOutlineSettings size={30} />,
-  },
+  // {
+  //   navigate: "/settings",
+  //   name: "Settings",
+  //   icon: <MdOutlineSettings size={30} />,
+  // },
 ];
 
 function Sidebar() {

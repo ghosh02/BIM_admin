@@ -20,6 +20,7 @@ import AdminList from "./settings/AdminList.jsx";
 import CreateAdmin from "./settings/CreateAdmin.jsx";
 import User from "./pages/User.jsx";
 import CreateUser from "./user/CreateUser.jsx";
+import Blogs from "./pages/Blogs.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,7 +29,8 @@ const router = createBrowserRouter(
       <Route path="/forgotPassword" element={<ForgotPassword />} />
       <Route path="/passwordLink" element={<PasswordLink />} />
       <Route path="/overview" element={<Overview />} />
-      <Route path="/user" element={<User />} />
+      {/* <Route path="/user" element={<User />} /> */}
+      <Route path="/blog" element={<Blogs />} />
       <Route path="/user/createUser" element={<CreateUser />} />
       <Route path="/courseManagement" element={<CourseManagement />} />
       <Route path="/settings" element={<Settings />} />

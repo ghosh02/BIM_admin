@@ -100,7 +100,7 @@ const Overview = () => {
             </p>
           </CardContent>
         </Card>
-        <Card className="bg-[#fff] rounded-[8px] shadow">
+        {/* <Card className="bg-[#fff] rounded-[8px] shadow">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Active Users</CardTitle>
             <Link className="text-sm font-medium underline" to="#">
@@ -113,8 +113,8 @@ const Overview = () => {
               +12 since last month
             </p>
           </CardContent>
-        </Card>
-        <Card className="bg-[#fff] rounded-[8px] shadow">
+        </Card> */}
+        {/* <Card className="bg-[#fff] rounded-[8px] shadow">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">
               Most popular course
@@ -129,7 +129,7 @@ const Overview = () => {
               +12 since last month
             </p>
           </CardContent>
-        </Card>
+        </Card> */}
         <Card className="bg-[#fff] rounded-[8px] shadow">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Total course</CardTitle>
@@ -160,7 +160,7 @@ const Overview = () => {
               <TableHead className="text-center">User ID</TableHead>
               <TableHead className="text-center">Full Name</TableHead>
 
-              <TableHead className="text-center">Last Time Active</TableHead>
+              {/* <TableHead className="text-center">Last Time Active</TableHead> */}
               <TableHead className="text-center">#Total course</TableHead>
             </TableRow>
           </TableHeader>
@@ -170,9 +170,9 @@ const Overview = () => {
                 <TableCell className="text-center">{user?.userID}</TableCell>
                 <TableCell className="text-center">{user?.fullName}</TableCell>
 
-                <TableCell className="text-center">
+                {/* <TableCell className="text-center">
                   {user?.lastTimeActive}
-                </TableCell>
+                </TableCell> */}
                 <TableCell className="text-center">{user?.sessions}</TableCell>
                 <TableCell></TableCell>
               </TableRow>
