@@ -148,7 +148,7 @@ const Overview = () => {
       {/* Top user list */}
       <div className="bg-[#fff] mt-[16px] rounded-[8px]">
         <div className="flex items-center justify-between px-[25px] py-[16px]">
-          <p>Top Users</p>
+          <p>Top Students</p>
           <Link to="/user" className="flex items-center justify-center gap-1 ">
             <p className="text-[#3E79F7] text-[14px]">See all Users</p>
             <FaArrowRightLong color="#3E79F7" size={12} />

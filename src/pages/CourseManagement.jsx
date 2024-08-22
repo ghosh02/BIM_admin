@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import images from "../assets/course.png";
+import { Link } from "react-router-dom";
+import { FaPlus } from "react-icons/fa6";
 const CourseManagement = () => {
   const [courses, setCourses] = useState([
     {
@@ -117,11 +119,23 @@ const CourseManagement = () => {
 
   return (
     <div className="flex-1 p-[32px]   ">
-      <h1 className="text-[24px] text-darkgray font-[700] pl-[10px] pb-[24px]">
-        Course Managenent
-      </h1>
+      <div className="flex justify-between items-center mb-[24px]">
+        <h1 className="text-[24px] text-darkgray font-[700] pl-[10px] pb-[24px]">
+          Course Managenent
+        </h1>
 
-      <form onSubmit={handleSubmit}>
+        <Link to="createCourse">
+          <button className=" flex gap-3 items-center justify-center text-[#fff] text-[16px] font-[600] bg-pink px-[10px] py-[8px] rounded-[4px]">
+            <span>
+              <FaPlus size={14} />
+            </span>
+            Create Course
+          </button>
+        </Link>
+      </div>
+
+
+      {/* <form onSubmit={handleSubmit}>
         <div className=" flex flex-col gap-4">
           <div className=" flex flex-col gap-1">
             <label htmlFor="title">Title</label>
@@ -206,7 +220,7 @@ const CourseManagement = () => {
         >
           {form.id ? "Update Course" : "Add Course"}
         </button>
-      </form>
+      </form> */}
       <ul className="grid grid-cols-4 gap-5 py-4">
         {courses.map((course) => (
           <li
