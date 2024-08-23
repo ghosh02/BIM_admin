@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import { IoMdArrowBack } from "react-icons/io";
 import { Link } from "react-router-dom";
+
 import "react-phone-input-2/lib/style.css";
 
-function CreateCourse() {
+function CreateBlog() {
 
     const [form, setForm] = useState({
         id: null,
         title: "",
         description: "",
         content: "",
-        price: "",
-        offerPrice: "",
+        authorName: "",
+        date: "",
         image: "",
-        video: "",
       });
 
       const handleChange = (e) => {
@@ -50,14 +50,14 @@ function CreateCourse() {
 
     return (
         <div className="flex-1 mx-[32px] mt-[32px]">
-            <Link to="/courseManagement">
+            <Link to="/blog">
                 <div className="w-[92px] h-[40px] flex justify-center items-center bg-[#fff] my-3 gap-2 rounded-[8px]">
                     <IoMdArrowBack />
                     <p>Back</p>
                 </div>
             </Link>
             <div className=" p-[20px] bg-[#fff] rounded-[8px] mb-10">
-                <h1 className="font-[600] text-[20px]">General information</h1>
+                <h1 className="font-[600] text-[20px] mb-5">General information</h1>
                 <form onSubmit={handleSubmit} >
                     <div className=" flex flex-col gap-4">
                         <div className=" flex flex-col gap-1">
@@ -73,40 +73,28 @@ function CreateCourse() {
                             />
                         </div>
 
+                       
                         <div className=" flex flex-col gap-1">
-                            <label htmlFor="title">Price</label>
+                            <label htmlFor="title">Author Name</label>
                             <input
                                 type="number"
-                                name="price"
-                                placeholder="Price"
-                                value={form.price}
-                                onChange={handleChange}
-                                required
-                                className="w-full px-3 py-2 border rounded-[8px] outline-none"
-                            />
-                        </div>
-
-                        <div className=" flex flex-col gap-1">
-                            <label htmlFor="title">Offer price</label>
-                            <input
-                                type="number"
-                                name="offerPrice"
-                                placeholder="Offer Price"
-                                value={form.offerPrice}
+                                name="authorName"
+                                placeholder="Author Name"
+                                value={form.authorName}
                                 onChange={handleChange}
                                 required
                                 className="w-full px-3 py-2 border rounded-[8px] outline-none"
                             />
                         </div>
                         <div className=" flex flex-col gap-1">
-                            <label htmlFor="title">Description</label>
+                            <label htmlFor="title">Date</label>
                             <textarea
-                                name="description"
-                                placeholder="Description"
-                                value={form.description}
+                                name="date"
+                                placeholder="Date"
+                                value={form.date}
                                 onChange={handleChange}
                                 required
-                                className="w-full h-[150px] px-3 py-2 border rounded-[8px] outline-none"
+                                className="w-full px-3 py-2 border rounded-[8px] outline-none"
                             />
                         </div>
                         <div className=" flex flex-col gap-1">
@@ -118,15 +106,6 @@ function CreateCourse() {
                                 onChange={handleChange}
                                 required
                                 className="w-full h-[150px] px-3 py-2 border rounded-[8px] outline-none"
-                            />
-                        </div>
-                        <div className=" flex flex-col gap-1">
-                            <label htmlFor="title">Video</label>
-                            <input
-                                type="file"
-                                name="video"
-                                onChange={handleImageChange}
-                                className="w-full px-3 py-2 border rounded-[8px] outline-none"
                             />
                         </div>
                         <div className=" flex flex-col gap-1">
@@ -150,7 +129,7 @@ function CreateCourse() {
                         type="submit"
                         className="bg-pink text-white px-6 py-4 rounded-[8px] my-[12px] "
                     >
-                        {form.id ? "Update Course" : "Add Course"}
+                        {form.id ? "Update Blog" : "Add Blog"}
                     </button>
                 </form>
             </div>
@@ -158,4 +137,4 @@ function CreateCourse() {
     );
 }
 
-export default CreateCourse;
+export default CreateBlog;

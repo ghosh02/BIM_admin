@@ -1,20 +1,35 @@
 import React from 'react'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card'
+import { Button } from './ui/button'
 
-const BlogsCard = () => {
-  return (
-    <Card key={blog.id} className= 'bg-[#eee] rounded-[8px]'>
-            <CardHeader>
-              <CardTitle>{blog.title}</CardTitle>
-              <CardDescription>{blog.excerpt}</CardDescription>
+const BlogsCard = ({ title, description, date, image,author }) => {
+    return (
+        <Card className="flex flex-col overflow-hidden rounded-[8px] bg-[#dddddd]">
+            <div className="flex h-[200px] w-full">
+                <img
+                    src={image}
+                    alt={title}
+                    layout="fill"
+                    objectFit="cover"
+                    className='w-full '
+                />
+            </div>
+            <CardHeader >
+                <div className="flex  items-center mb-2">
+                    <p className="text-sm font-medium">{author}</p>
+                    <span> &nbsp; • &nbsp; </span>
+                    <p className="text-sm text-muted-foreground">{date}</p>
+                </div>
+                <p className="text-xl font-semibold">{title}</p>
             </CardHeader>
             <CardContent>
-              {/* Add any additional content here */}
+                <p className="text-muted-foreground">{description}</p>
             </CardContent>
-            <CardFooter>
-              <p className="text-sm text-muted-foreground">Published on {blog.date}</p>
+            <CardFooter className="mt-auto">
+                <Button variant="outline" className="w-full rounded-[4px] hover:bg-[#bcbcbc] ">Read More</Button>
             </CardFooter>
-          </Card>
-  )
+        </Card>
+    )
 }
 
 export default BlogsCard
