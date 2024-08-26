@@ -70,9 +70,6 @@ const CourseManagement = () => {
     offerPrice: "",
     image: "",
   });
-
-  
-
   
 
  
