@@ -3,6 +3,8 @@ import { MdOutlineMail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
 import { SignInRoute } from "@/utils/authHandler";
+import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react";
 
 
 function Signin() {
@@ -10,20 +12,29 @@ function Signin() {
   const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
 
     e.preventDefault();
 
     setIsSubmitted(true);
-    if (email && password) {
-      const data = await SignInRoute(email, password);
-      if (data.message === "Login Successful") {
-        navigate("/overview");
+    try {
+      if (email && password) {
+        setLoading(true);
+        const data = await SignInRoute(email, password);
+        if (data.message === "Login Successful") {
+          navigate("/overview");
+        }
+        localStorage.setItem('adminId', data.adminId);
+        console.log(data);
       }
-      localStorage.setItem('adminId', data.adminId);
-      console.log(data);
+    } catch (error) {
+      throw error
+    }
+    finally {
+      setLoading(false);
     }
   };
 
@@ -96,12 +107,20 @@ function Signin() {
               Forgot your Password?
             </p>
           </Link>
-          <button
-            type="submit"
-            className=" w-[100%] h-[50px] bg-pink text-[#fff] rounded-[8px] mt-[10px] font-[500]"
-          >
-            Log in
-          </button>
+          {
+            (loading) ?
+              <Button disabled className = "w-[100%] h-[50px] bg-pink text-[#fff] rounded-[8px] mt-[10px] font-[500]">
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Logging In
+              </Button>
+              :
+              <button
+                type="submit"
+                className=" w-[100%] h-[50px] bg-pink text-[#fff] rounded-[8px] mt-[10px] font-[500]"
+              >
+                Log In
+              </button>
+          }
         </form>
       </div>
     </div>
