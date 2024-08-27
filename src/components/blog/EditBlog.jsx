@@ -18,7 +18,7 @@ const EditBlog = ({title, description, authorName, date, about, imageUrl}) => {
         about: about,
         authorName: authorName,
         date: date,
-        image: imageUrl,
+        image: "",
     });
 
     const [userData, setUserData] = useState({
