@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { MdOutlineMail } from "react-icons/md";
 import { CiLock } from "react-icons/ci";
 import { Link, useNavigate } from "react-router-dom";
+import { SignInRoute } from "@/utils/authHandler";
+
 
 function Signin() {
   const [email, setEmail] = useState("");
@@ -10,14 +12,19 @@ function Signin() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
+
     e.preventDefault();
+
     setIsSubmitted(true);
-    // navigate("/user");
     if (email && password) {
-      navigate("/overview");
+      const data = await SignInRoute(email, password);
+      if (data.message === "Login Successful") {
+        navigate("/overview");
+      }
+      localStorage.setItem('adminId', data.adminId);
+      console.log(data);
     }
-    console.log(email);
   };
 
   const isEmailError = isSubmitted && !email;
@@ -30,9 +37,8 @@ function Signin() {
 
           <p className="text-gray text-[14px] mt-[20px]">Email</p>
           <div
-            className={`flex items-center h-[49px] border ${
-              isEmailError ? "border-red-500" : "border-[#DADCE0]"
-            } bg-[#fafafa] px-[16px] py-[16px] rounded-[8px] focus-within:border-green-500`}
+            className={`flex items-center h-[49px] border ${isEmailError ? "border-red-500" : "border-[#DADCE0]"
+              } bg-[#fafafa] px-[16px] py-[16px] rounded-[8px] focus-within:border-green-500`}
           >
             <MdOutlineMail />
             <input
@@ -56,9 +62,8 @@ function Signin() {
           </div>
           <p className="text-gray text-[14px] mt-[5px]">Password</p>
           <div
-            className={`flex items-center h-[49px] border ${
-              isPasswordError ? "border-red-500" : "border-[#DADCE0]"
-            } bg-[#fafafa] px-[16px] py-[16px] rounded-[8px] focus-within:border-green-500`}
+            className={`flex items-center h-[49px] border ${isPasswordError ? "border-red-500" : "border-[#DADCE0]"
+              } bg-[#fafafa] px-[16px] py-[16px] rounded-[8px] focus-within:border-green-500`}
           >
             <CiLock />
             <input

@@ -9,16 +9,16 @@ import { Edit } from "lucide-react"
 import { useState } from "react"
 
 
-const EditBlog = ({title, description, authorName, date, content}) => {
+const EditBlog = ({title, description, authorName, date, about, imageUrl}) => {
 
     const [form, setForm] = useState({
         id: null,
         title: title,
         description: description,
-        content: content,
+        about: about,
         authorName: authorName,
         date: date,
-        image: "",
+        image: imageUrl,
     });
 
     const [userData, setUserData] = useState({
@@ -97,8 +97,8 @@ const EditBlog = ({title, description, authorName, date, content}) => {
                                 <label htmlFor="title">Content</label>
                                 <textarea
                                     name="content"
-                                    placeholder="Content"
-                                    value={form.content}
+                                    placeholder="About"
+                                    value={form.about}
                                     onChange={handleChange}
                                     required
                                     className="w-full h-[150px] px-3 py-2 border rounded-[8px] outline-none"
@@ -115,7 +115,7 @@ const EditBlog = ({title, description, authorName, date, content}) => {
                             </div>
                             {form.image && (
                                 <img
-                                    src={form.image}
+                                    src={image}
                                     alt="Course"
                                     className="mt-2 w-32 h-32 object-cover"
                                 />
