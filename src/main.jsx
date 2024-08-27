@@ -24,6 +24,7 @@ import Blogs from "./pages/Blogs.jsx";
 import CreateCourse from "./course/CreateCourse.jsx";
 import CreateBlog from "./blog/CreateBlog.jsx";
 import BlogPost from "./pages/BlogPost.jsx";
+import Courses from "./pages/Courses.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -38,7 +39,7 @@ const router = createBrowserRouter(
       <Route path="/blog/createBlog" element={<CreateBlog />} />
       <Route path="/user/createUser" element={<CreateUser />} />
       <Route path="/courseManagement/createCourse" element={<CreateCourse />} />
-      <Route path="/courseManagement" element={<CourseManagement />} />
+      <Route path="/courseManagement" element={<Courses />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/settings/changePassword" element={<ChangePassword />} />
       <Route path="/settings/adminList" element={<AdminList />} />
