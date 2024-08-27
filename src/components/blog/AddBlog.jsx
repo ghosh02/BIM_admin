@@ -48,7 +48,7 @@ const AddBlog = () => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button variant="outline" className="flex gap-3 items-center justify-center text-[#fff] text-[16px] font-[600] bg-pink px-[10px] py-[8px] rounded-[4px]">
+                <Button variant="outline" className="flex gap-3 items-center justify-center text-[#fff] text-[16px] font-[600] bg-pink px-[10px] py-[8px] rounded-[8px]">
                     <span>
                         <FaPlus size={14} />
                     </span>
