@@ -13,17 +13,12 @@ import Layout from "./layout/Layout.jsx";
 import ForgotPassword from "./auth/ForgotPassword.jsx";
 import PasswordLink from "./auth/PasswordLink.jsx";
 import Overview from "./pages/Overview.jsx";
-import CourseManagement from "./pages/CourseManagement.jsx";
 import Settings from "./pages/Settings.jsx";
 import ChangePassword from "./settings/ChangePassword.jsx";
 import AdminList from "./settings/AdminList.jsx";
 import CreateAdmin from "./settings/CreateAdmin.jsx";
 import User from "./pages/User.jsx";
-import CreateUser from "./user/CreateUser.jsx";
 import Blogs from "./pages/Blogs.jsx";
-import CreateCourse from "./course/CreateCourse.jsx";
-import CreateBlog from "./blog/CreateBlog.jsx";
-import BlogPost from "./pages/BlogPost.jsx";
 import Courses from "./pages/Courses.jsx";
 
 const router = createBrowserRouter(
@@ -35,10 +30,6 @@ const router = createBrowserRouter(
       <Route path="/overview" element={<Overview />} />
       <Route path="/user" element={<User />} />
       <Route path="/blog" element={<Blogs />} />
-      <Route path="/blogPost" element={<BlogPost />} />
-      <Route path="/blog/createBlog" element={<CreateBlog />} />
-      <Route path="/user/createUser" element={<CreateUser />} />
-      <Route path="/courseManagement/createCourse" element={<CreateCourse />} />
       <Route path="/courseManagement" element={<Courses />} />
       <Route path="/settings" element={<Settings />} />
       <Route path="/settings/changePassword" element={<ChangePassword />} />

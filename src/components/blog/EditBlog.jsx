@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/dialog"
 import { Edit } from "lucide-react"
 import { useState } from "react"
-import { FaPlus } from "react-icons/fa6"
 
 
 const EditBlog = ({title, description, authorName, date, content}) => {

@@ -1,13 +1,11 @@
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
-    DialogClose,
     DialogContent,
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { Edit } from "lucide-react"
 import { useState } from "react"
-import { FaPlus } from "react-icons/fa6"
 
 
 const EditCourse = ({title, description, content, price, offerPrice}) => {
