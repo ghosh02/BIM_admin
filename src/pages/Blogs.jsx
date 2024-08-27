@@ -53,13 +53,13 @@ export default function Blogs() {
         <TableBody>
           {blogPosts.map((post, index) => (
             <TableRow key={index}>
-              <TableCell className="font-bold w-[250px]">{post.title}</TableCell>
+              <TableCell className="font-bold w-[250px] text-center">{post.title}</TableCell>
               <TableCell className="w-[350px] text-justify">
                 {post.description}
               </TableCell>
               <TableCell className="font-bold text-center">{post.authorName}</TableCell>
               <TableCell className= "text-center">{post.date}</TableCell>
-              <TableCell className="flex justify-center"><img src={`${post.image}`} alt='Blog Image' width={200} className="rounded-[10px]"/></TableCell>
+              <TableCell className="flex justify-center"><img src={`${post.image}`} alt='Blog Image' width={200} className="rounded-[10px] h-32"/></TableCell>
               <TableCell>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>

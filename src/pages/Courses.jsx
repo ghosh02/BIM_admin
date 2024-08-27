@@ -56,7 +56,7 @@ export default function Courses() {
         <TableBody>
           {courses.map((post) => (
             <TableRow key={post.id}>
-              <TableCell className="font-bold w-[200px]">{post.title}</TableCell>
+              <TableCell className="font-bold w-[200px] text-center">{post.title}</TableCell>
               <TableCell className=" text-center font-bold">
                 {post.instructor}
               </TableCell>
@@ -68,7 +68,7 @@ export default function Courses() {
               </TableCell>
               <TableCell className='text-center'>₹{post.price}</TableCell>
               <TableCell className='text-center'>₹{post.offerPrice}</TableCell>
-              <TableCell className="flex justify-center"><img src={post.imageUrl} alt='Blog Image' width={200} className="rounded-[10px]" /></TableCell>
+              <TableCell className="flex justify-center"><img src={post.imageUrl} alt='Blog Image' width={200} className="rounded-[10px] h-32" /></TableCell>
               <TableCell>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
