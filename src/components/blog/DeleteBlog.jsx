@@ -8,10 +8,23 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import { deleteBlog } from "@/utils/blogHandler"
 import { DialogClose } from "@radix-ui/react-dialog"
 import { Trash2 } from "lucide-react"
+import { useState } from "react"
 
-export function DeleteBlog() {
+export function DeleteBlog({blogId}) {   
+
+    async function handleClick (){
+        try {
+            const adminId = localStorage.getItem ('adminId'); 
+            await deleteBlog (adminId, blogId);
+            console.log ("Blog Deleted")
+        } catch (error) {
+            console.log ("Delete blog error: ", error);
+        }
+    }
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -30,7 +43,7 @@ export function DeleteBlog() {
 
                 <DialogClose asChild>
                     <DialogFooter>
-                        <Button type="submit" className="bg-black text-white rounded-[10px] hover:bg-black hover:text-white hover:rounded-[10px]">Yes</Button>
+                        <Button type="submit" className="bg-black text-white rounded-[10px] hover:bg-black hover:text-white hover:rounded-[10px]" onClick = {handleClick}>Yes</Button>
                         <Button type="submit" className="bg-black text-white rounded-[10px] hover:bg-black hover:text-white hover:rounded-[10px]">No</Button>
                     </DialogFooter>
                 </DialogClose>

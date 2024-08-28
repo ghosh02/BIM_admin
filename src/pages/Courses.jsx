@@ -58,7 +58,7 @@ export default function Courses() {
             <TableRow key={post.id}>
               <TableCell className="font-bold w-[200px] text-center">{post.title}</TableCell>
               <TableCell className=" text-center font-bold">
-                {post.instructor}
+                {post.instructorName}
               </TableCell>
               <TableCell className=" text-center">
                 {post.enrolledStudent}
@@ -81,7 +81,7 @@ export default function Courses() {
                     <div className="flex flex-col justify-start p-0">
                       <ViewCourse />
                       <EditCourse title={post.title} description={post.description} content={post.content} price={post.price} offerPrice={post.offerPrice} />
-                      <DeleteCourse />
+                      <DeleteCourse courseId = {post.id}/>
                     </div>
                   </DropdownMenuContent>
                 </DropdownMenu>
