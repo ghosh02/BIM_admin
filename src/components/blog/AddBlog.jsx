@@ -143,7 +143,7 @@ const AddBlog = () => {
                             <DialogClose asChild>
                                 <button
                                     type="submit"
-                                    className="bg-pink text-white py-2 rounded-[8px] my-[12px] w-full mt-6 "
+                                    className="bg-pink text-white py-4 rounded-[8px] my-[12px] w-full mt-6 "
                                 >
                                     Add Blog
                                 </button>

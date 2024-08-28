@@ -7,7 +7,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import images from "../assets/course.png";
 import { MoreVertical } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import AddCourse from "@/components/course/AddCourse";
@@ -79,8 +78,8 @@ export default function Courses() {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end" className="bg-white rounded-[8px]"  >
                     <div className="flex flex-col justify-start p-0">
-                      <ViewCourse />
-                      <EditCourse title={post.title} description={post.description} content={post.content} price={post.price} offerPrice={post.offerPrice} />
+                      <ViewCourse title = {post.title} description={post.description} image={post.imageUrl} content={post.content}/>
+                      <EditCourse title={post.title} description={post.description} content={post.content} price={post.price} offerPrice={post.offerPrice} imageUrl={post.imageUrl} enrolledStudent={post.enrolledStudent} instructorName={post.instructorName} courseId={post.id}/>
                       <DeleteCourse courseId = {post.id}/>
                     </div>
                   </DropdownMenuContent>

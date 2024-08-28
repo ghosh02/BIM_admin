@@ -37,7 +37,7 @@ export async function getCourse (adminId){
     }
 }
 
-export async function editCourse (adminId, courseId, title, price, offerPrice, description, content, thumbnailImage){
+export async function editCourse (adminId, courseId, title, price, offerPrice, description, content, thumbnailImage, instructorName, enrolledStudent){
     try {
         const editCourse = await axios.post (`${endpoint.courseEndpoint}/edit/${adminId}/${courseId}`,{
             title: title,
@@ -45,8 +45,15 @@ export async function editCourse (adminId, courseId, title, price, offerPrice, d
             offerPrice: offerPrice,
             description: description,
             content: content,
+            instructorName: instructorName,
+            enrolledStudent: enrolledStudent,
             thumbnailImage: thumbnailImage
+        }, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
         })
+        console.log (editCourse)
         return editCourse.data;
     } catch (error) {
         console.log ("Edit Course Error" + error);

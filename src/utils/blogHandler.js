@@ -36,14 +36,19 @@ export async function getBlogs (adminId){
 
 export async function editBlog (adminId, blogId, title, description, about, author, dateAndTime, blogImage){
     try {
-        const editBlog = await axios.post (`${endpoint.blogEndpoint}/${adminId}/${blogId}`, {
+        const editBlog = await axios.post (`${endpoint.blogEndpoint}/edit/${adminId}/${blogId}`, {
             title: title,
             description: description,
             about: about,
             author: author,
             dateAndTime: dateAndTime,
             blogImage: blogImage
+        }, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            }
         })
+        console.log (editBlog);
         return editBlog.data;
     } catch (error) {
         console.log("Edit blog error"+error);        

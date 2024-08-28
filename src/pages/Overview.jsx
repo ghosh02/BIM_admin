@@ -89,9 +89,9 @@ const Overview = () => {
         <Card className="bg-[#fff] rounded-[8px] shadow">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">New Users</CardTitle>
-            <Link className="text-sm font-medium underline" to="#">
+            {/* <Link className="text-sm font-medium underline" to="#">
               View All
-            </Link>
+            </Link> */}
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">124</div>
@@ -133,9 +133,9 @@ const Overview = () => {
         <Card className="bg-[#fff] rounded-[8px] shadow">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
             <CardTitle className="text-sm font-medium">Total course</CardTitle>
-            <Link className="text-sm font-medium underline" to="#">
+            {/* <Link className="text-sm font-medium underline" to="#">
               View All
-            </Link>
+            </Link> */}
           </CardHeader>
           <CardContent>
             <div className="text-2xl font-bold">40</div>

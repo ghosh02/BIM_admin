@@ -189,7 +189,7 @@ const AddCourse = () => {
                                 <DialogClose asChild>
                                     <button
                                         type="submit"
-                                        className="bg-pink text-white py-2 rounded-[8px] mt-3 w-full"
+                                        className="bg-pink text-white py-4 rounded-[8px] mt-3 w-full"
                                     >
                                         Add Course
                                     </button>

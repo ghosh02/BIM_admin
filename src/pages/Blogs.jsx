@@ -71,7 +71,7 @@ export default function Blogs() {
                   <DropdownMenuContent align="end" className="bg-white rounded-[8px]"  >
                     <div className="flex flex-col justify-start p-0">
                       <ViewBlog title={post.title} description={post.description} author={post.authorName} date={post.date} about={post.about} imageUrl={post.image}/>
-                      <EditBlog title={post.title} description={post.description} authorName={post.authorName} date={post.date} about={post.about} imageUrl={post.image}/>
+                      <EditBlog title={post.title} description={post.description} authorName={post.authorName} date={post.date} about={post.about} imageUrl={post.image} blogId={post.id}/>
                       <DeleteBlog blogId = {post.id}/>
                     </div>
                   </DropdownMenuContent>
