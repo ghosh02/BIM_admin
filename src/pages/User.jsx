@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 // import { useSelector } from "react-redux";
 import { Link, Navigate } from "react-router-dom";
 import {
@@ -9,6 +9,17 @@ import {
   TableBody,
   Table,
 } from "@/components/ui/table";
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+
 
 import { Button } from "@/components/ui/button";
 import { IoMdArrowBack } from "react-icons/io";
@@ -19,41 +30,61 @@ const data = [
     user_id: "001",
     full_name: "John Doe",
     country: "USA",
-    type: "patient",
+    type: "Course 1",
     date_of_creation: "2024-07-25",
     status: "active",
+    payAmt: '100',
+    dueAmt: '0',
+    courseFee: '100',
+    courseDuration: '2 Month'
   },
   {
     user_id: "002",
     full_name: "Jane Smith",
     country: "Canada",
-    type: "patient",
+    type: "Course 2",
     date_of_creation: "2024-07-24",
     status: "active",
+    payAmt: '100',
+    dueAmt: '0',
+    courseFee: '100',
+    courseDuration: '2 Month'
   },
   {
     user_id: "003",
     full_name: "Carlos Ramirez",
     country: "Mexico",
-    type: "patient",
+    type: "Course 3",
     date_of_creation: "2024-07-23",
     status: "active",
+    payAmt: '100',
+    dueAmt: '0',
+    courseFee: '100',
+    courseDuration: '2 Month'
   },
   {
     user_id: "004",
     full_name: "Anna Müller",
     country: "Germany",
-    type: "patient",
+    type: "Course 4",
     date_of_creation: "2024-07-22",
     status: "active",
+    payAmt: '100',
+    dueAmt: '0',
+    courseFee: '100',
+    courseDuration: '2 Month'
   },
   {
     user_id: "005",
     full_name: "Yuki Tanaka",
     country: "Japan",
-    type: "patient",
+    type: "Course 5",
     date_of_creation: "2024-07-21",
     status: "active",
+    payAmt: '100',
+    dueAmt: '0',
+    courseFee: '100',
+    courseDuration: '2 Month'
   },
 ];
 
@@ -61,14 +92,25 @@ export default function User() {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [sortConfig, setSortConfig] = useState(null);
+  const [selectedValue, setSelectedValue] = useState('full_name');
 
   const filteredUsers = useMemo(() => {
-    return data.filter(
-      (data) =>
-        data.full_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        data.user_id.includes(searchQuery)
-    );
-  }, [searchQuery, data]);
+    if (selectedValue === 'full_name') {
+      return data.filter(
+        (data) =>
+          data.full_name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          data.user_id.includes(searchQuery)
+      );
+    }
+    else if (selectedValue === 'type') {
+      return data.filter(
+        (data) =>
+          data.type.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          data.user_id.includes(searchQuery)
+      );
+    }
+    return;
+  }, [searchQuery, data, selectedValue]);
 
   const sortedUsers = useMemo(() => {
     if (sortConfig !== null) {
@@ -108,7 +150,18 @@ export default function User() {
         <div className="flex justify-around items-center">
           <form className="p-[16px] ">
             <div className="flex items-center border rounded-[8px] bg-[#EEEEEE] h-[40px] px-2 ">
-              <SearchIcon className="  h-4 w-4 text-gray-500" />
+              <Select onValueChange={(value) => setSelectedValue(value)} value={selectedValue}>
+                <SelectTrigger className="w-[300px] border-none">
+                  <SelectValue placeholder={selectedValue} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup className="bg-white">
+                    <SelectItem value="full_name">Search by Name</SelectItem>
+                    <SelectItem value="type" >Search by Course</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+
               <input
                 className="w-full bg-transparent shadow-none border-none outline-none pl-2 "
                 placeholder="Search..."
@@ -116,6 +169,7 @@ export default function User() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
+              <SearchIcon className="  h-4 w-4 text-gray-500" />
             </div>
           </form>
           <Link to="createUser">
@@ -137,7 +191,7 @@ export default function User() {
                 <TableRow>
                   <TableHead
                     onClick={() => requestSort("id")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
                     <div className="flex items-center gap-2">
                       <input type="checkbox" />
@@ -146,39 +200,57 @@ export default function User() {
                   </TableHead>
                   <TableHead
                     onClick={() => requestSort("name")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
                     Full Name
                   </TableHead>
                   <TableHead
                     onClick={() => requestSort("country")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
                     Country
                   </TableHead>
                   <TableHead
                     onClick={() => requestSort("type")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
-                    Type
+                    Course
                   </TableHead>
                   <TableHead
                     onClick={() => requestSort("date")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
-                    Date of creation
+                    Date of Registration
                   </TableHead>
                   <TableHead
                     onClick={() => requestSort("status")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
                     Status
                   </TableHead>
                   <TableHead
                     onClick={() => requestSort("action")}
-                    className="cursor-pointer "
+                    className="cursor-pointer text-center"
                   >
-                    Actions
+                    Pay Amount
+                  </TableHead>
+                  <TableHead
+                    onClick={() => requestSort("action")}
+                    className="cursor-pointer text-center"
+                  >
+                    Due Amount
+                  </TableHead>
+                  <TableHead
+                    onClick={() => requestSort("action")}
+                    className="cursor-pointer text-center"
+                  >
+                    Course Fee
+                  </TableHead>
+                  <TableHead
+                    onClick={() => requestSort("action")}
+                    className="cursor-pointer text-center"
+                  >
+                    Course Duration
                   </TableHead>
                 </TableRow>
               </TableHeader>
@@ -191,12 +263,15 @@ export default function User() {
                         {user?.user_id}
                       </div>
                     </TableCell>
-                    <TableCell>{user?.full_name}</TableCell>
-                    <TableCell>{user?.country}</TableCell>
-                    <TableCell>{user?.type}</TableCell>
-                    <TableCell>{user?.date_of_creation}</TableCell>
-                    <TableCell>{user?.status}</TableCell>
-                    <TableCell></TableCell>
+                    <TableCell className="text-center">{user?.full_name}</TableCell>
+                    <TableCell className="text-center">{user?.country}</TableCell>
+                    <TableCell className="text-center">{user?.type}</TableCell>
+                    <TableCell className="text-center">{user?.date_of_creation}</TableCell>
+                    <TableCell className="text-center">{user?.status}</TableCell>
+                    <TableCell className="text-center">{user?.payAmt}</TableCell>
+                    <TableCell className="text-center">{user?.dueAmt}</TableCell>
+                    <TableCell className="text-center">{user?.courseFee}</TableCell>
+                    <TableCell className="text-center">{user?.courseDuration}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
