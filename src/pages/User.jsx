@@ -149,7 +149,7 @@ export default function User() {
 
         <div className="flex justify-around items-center">
           <form className="p-[16px] ">
-            <div className="flex items-center border rounded-[8px] bg-[#EEEEEE] h-[40px] px-2 ">
+            <div className="flex items-center border rounded-[10px] bg-white h-[40px] px-2 ">
               <Select onValueChange={(value) => setSelectedValue(value)} value={selectedValue}>
                 <SelectTrigger className="w-[300px] border-none">
                   <SelectValue placeholder={selectedValue} />
@@ -172,20 +172,20 @@ export default function User() {
               <SearchIcon className="  h-4 w-4 text-gray-500" />
             </div>
           </form>
-          <Link to="createUser">
+          {/* <Link to="createUser">
             <button className=" flex gap-3 items-center justify-center text-[#fff] text-[16px] font-[600] bg-pink px-[10px] py-[8px] rounded-[4px]">
               <span>
                 <FaPlus size={14} />
               </span>
               Create a new user
             </button>
-          </Link>
+          </Link> */}
         </div>
       </div>
 
       <div className="flex flex-col flex-1">
         <main className="flex flex-col gap-4">
-          <div className="border shadow-sm rounded-lg">
+          <div className="border shadow-sm rounded-[20px] bg-white">
             <Table>
               <TableHeader>
                 <TableRow>
