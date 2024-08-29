@@ -88,7 +88,7 @@ const Overview = () => {
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <Card className="bg-[#fff] rounded-[8px] shadow">
           <CardHeader className="flex flex-row items-center justify-between pb-2">
-            <CardTitle className="text-sm font-medium">New Users</CardTitle>
+            <CardTitle className="text-sm font-medium">Total Students</CardTitle>
             {/* <Link className="text-sm font-medium underline" to="#">
               View All
             </Link> */}
@@ -148,9 +148,9 @@ const Overview = () => {
       {/* Top user list */}
       <div className="bg-[#fff] mt-[16px] rounded-[8px]">
         <div className="flex items-center justify-between px-[25px] py-[16px]">
-          <p>Top Students</p>
+          <p className="font-bold">Top Students</p>
           <Link to="/user" className="flex items-center justify-center gap-1 ">
-            <p className="text-[#3E79F7] text-[14px]">See all Users</p>
+            <p className="text-[#3E79F7] text-[14px]">See All Students</p>
             <FaArrowRightLong color="#3E79F7" size={12} />
           </Link>
         </div>
@@ -161,7 +161,7 @@ const Overview = () => {
               <TableHead className="text-center">Full Name</TableHead>
 
               {/* <TableHead className="text-center">Last Time Active</TableHead> */}
-              <TableHead className="text-center">#Total course</TableHead>
+              <TableHead className="text-center">Total course</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
