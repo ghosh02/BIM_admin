@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { MdDashboard } from "react-icons/md";
+import { MdDashboard, MdVideoCall } from "react-icons/md";
 import { FiUsers } from "react-icons/fi";
 import { MdWifiCalling3 } from "react-icons/md";
 import { TbLogs } from "react-icons/tb";
@@ -14,6 +14,7 @@ const sidebarData = [
     name: "Course ",
     icon: <MdWifiCalling3 size={30} />,
   },
+  { navigate: "/class", name: "Video Class", icon: <MdVideoCall size={30} /> },
   // {
   //   navigate: "/settings",
   //   name: "Settings",

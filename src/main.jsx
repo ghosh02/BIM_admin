@@ -13,6 +13,7 @@ import Overview from "./pages/Overview.jsx";
 import User from "./pages/User.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Courses from "./pages/Courses.jsx";
+import VideoClass from "./pages/VideoClass";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="/user" element={<User />} />
       <Route path="/blog" element={<Blogs />} />
       <Route path="/courseManagement" element={<Courses />} />
+      <Route path="/class" element={<VideoClass/>} />
     </Route>
   )
 );

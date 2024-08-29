@@ -154,8 +154,8 @@ export default function User() {
                 <SelectTrigger className="w-[300px] border-none">
                   <SelectValue placeholder={selectedValue} />
                 </SelectTrigger>
-                <SelectContent>
-                  <SelectGroup className="bg-white">
+                <SelectContent className = "bg-white rounded-[10px]">
+                  <SelectGroup >
                     <SelectItem value="full_name">Search by Name</SelectItem>
                     <SelectItem value="type" >Search by Course</SelectItem>
                   </SelectGroup>
