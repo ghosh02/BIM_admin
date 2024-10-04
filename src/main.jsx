@@ -14,6 +14,9 @@ import User from "./pages/User.jsx";
 import Blogs from "./pages/Blogs.jsx";
 import Courses from "./pages/Courses.jsx";
 import VideoClass from "./pages/VideoClass";
+import Trainee from "./pages/userManagement/Trainees";
+import TrainerManagement from "./pages/userManagement/Trainers";
+import HelpDesk from "./pages/helpAndSupport/HelpDesk";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,9 +24,11 @@ const router = createBrowserRouter(
       <Route path="" element={<Signin />} />
       <Route path="/overview" element={<Overview />} />
       <Route path="/user" element={<User />} />
+      <Route path="/treinee" element={<Trainee />} />
+      <Route path="/treiner" element={<TrainerManagement />} />
       <Route path="/blog" element={<Blogs />} />
-      <Route path="/courseManagement" element={<Courses />} />
-      <Route path="/class" element={<VideoClass/>} />
+      <Route path="/courseCatelog" element={<Courses />} />
+      <Route path="/helpDesk" element={<HelpDesk/>} />
     </Route>
   )
 );

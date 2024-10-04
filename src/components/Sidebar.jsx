@@ -30,15 +30,20 @@ const sidebarData = [
     isDropdown: true,
     items: [
       {
-        name: "Trainees",
-        navigate: "/trainees",
+        name: "Treinees",
+        navigate: "/treinee",
         icon: <FiUsers size={25} />,
       },
       {
-        name: "Trainers",
-        navigate: "/trainers",
+        name: "Treiners",
+        navigate: "/treiner",
         icon: <FiUsers size={25} />,
       },
+      // {
+      //   name: "Roles and Permissions",
+      //   navigate: "/rolesandpermissions",
+      //   icon: <FiUsers size={25} />,
+      // },
     ]
   },
   {
@@ -49,7 +54,7 @@ const sidebarData = [
     items: [
       {
         name: "Course Catalog",
-        navigate: "/courses",
+        navigate: "/courseCatelog",
         icon: <GrCatalog size={25} />,
       },
       {
@@ -141,22 +146,22 @@ const sidebarData = [
     ],
   },
   {
-    navigate: "/",
+    navigate: "/helpDesk",
     name: "Help and Support",
     icon: <MdContactSupport size={30} />,
-    isDropdown: true,
-    items: [
-      {
-        name: "Help Desk",
-        navigate: "/contact",
-        icon: <SiHelpdesk size={25} />,
-      },
-      {
-        name: "FAQs",
-        navigate: "/faqs",
-        icon: <MdContactSupport size={25} />,
-      },
-    ]
+    isDropdown: false,
+    // items: [
+    //   {
+    //     name: "Help Desk",
+    //     navigate: "/contact",
+    //     icon: <SiHelpdesk size={25} />,
+    //   },
+    //   {
+    //     name: "FAQs",
+    //     navigate: "/faqs",
+    //     icon: <MdContactSupport size={25} />,
+    //   },
+    // ]
   },
 ];
 
